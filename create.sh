@@ -11,6 +11,8 @@
 #   3.  Run this file.
 
 
+# Update docker info
+git pull
 
 
 
