@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+# Open firewall ports for the container to allow
+# external access
+
+
+# First, get the active zones for the firewall so the
+# executor of this script can identify the interface name
+IFACE="public"   # Hard-code for now.  Replace with prompt later.
+
+
+
+# Open ports
+firewall-cmd --zone=$IFACE --add-port 7443/tcp --permanent
+firewall-cmd --zone=$IFACE --add-port 7080/tcp --permanent
+firewall-cmd --zone=$IFACE --add-port 6666/tcp --permanent
+firewall-cmd --zone=$IFACE --add-port 7445/tcp --permanent
+firewall-cmd --zone=$IFACE --add-port 7446/tcp --permanent
+firewall-cmd --zone=$IFACE --add-port 7447/tcp --permanent
+
+firewall-cmd --reload
+systemctl restart firewalld.service
+

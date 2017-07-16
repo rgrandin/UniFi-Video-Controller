@@ -21,9 +21,8 @@ git pull
 TAG=unifivideo
 docker build -t $TAG . 
 
-# > ImageHash.txt
 
-HOST_DIR=/var/ubnt/container-video
+HOST_DIR=/data/unifi-video
 
 # Create the container
 docker create \
@@ -41,18 +40,10 @@ docker create \
   -p 7447:7447 \
   --cap-add SYS_ADMIN \
   --cap-add DAC_READ_SEARCH \
-  $TAG   #      > ContainerHash.txt
+  $TAG   
 
 
 
 # Start the container.
 docker start unifivideo
-#docker run \
-#  -p 8080:8080 \
-#  -p 8081:8081 \
-#  -p 8443:8443 \
-#  -p 8843:8843 \
-#  -p 8880:8880 \
-#  --rm \
-#  unifi
 

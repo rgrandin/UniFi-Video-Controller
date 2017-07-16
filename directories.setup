@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+# Make the directory to be used for this container's data
+mkdir -p /data/unifi-video
+mkdir -p /data/unifi-video/data
+mkdir -p /data/unifi-video/logs
+mkdir -p /data/unifi-video/videos
+
+chown -R dockeruser:dockeruser /data/unifi-video
