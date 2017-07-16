@@ -1,0 +1,12 @@
+[Unit]
+Description=UniFi Video container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a unifivideo
+ExecStop=/usr/bin/docker stop -t 2 unifivideo
+
+[Install]
+WantedBy=default.target

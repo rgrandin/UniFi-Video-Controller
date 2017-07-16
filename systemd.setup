@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+# Copy the systemd configuration to the appropriate location
+cp docker_unifi_video.service /etc/systemd/system/docker_unifi_video.service
+
+# Start the service (no effect if the container is already running)
+systemctl start docker_unifi_video.service
+
+# Enable the service to cause auto-start at system boot
+systemctl enable docker_unifi_video.service
