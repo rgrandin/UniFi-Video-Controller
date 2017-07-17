@@ -22,7 +22,7 @@ TAG=unifivideo
 docker build -t $TAG . 
 
 
-HOST_DIR=/data/unifi-video
+HOST_DIR=/home/data/unifi-video
 
 # Create the container
 docker create \

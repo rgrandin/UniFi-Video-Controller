@@ -2,9 +2,10 @@
 
 
 # Make the directory to be used for this container's data
-mkdir -p /data/unifi-video
-mkdir -p /data/unifi-video/data
-mkdir -p /data/unifi-video/logs
-mkdir -p /data/unifi-video/videos
+mkdir -p /home/data/unifi-video
+mkdir -p /home/data/unifi-video/data
+mkdir -p /home/data/unifi-video/logs
+mkdir -p /home/data/unifi-video/videos
 
-chown -R dockeruser:dockeruser /data/unifi-video
+chown -R dockeruser:dockeruser /home/data/unifi-video
+chcon -Rt svirt_sandbox_file_t /home/data
